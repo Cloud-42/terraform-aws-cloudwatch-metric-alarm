@@ -16,7 +16,7 @@ variable "evaluation_periods" {
 variable "metric_name" {
   type        = string
   description = "The name for the alarm's associated metric - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html"
-  default     = ""
+  default     = "Error"
 }
 
 variable "namespace" {
@@ -51,7 +51,7 @@ variable "treat_missing_data" {
 
 
 variable "dimensions" {
-  type        = any
+  type        = map
   description = "The dimensions for this metric - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html"
 }
 
