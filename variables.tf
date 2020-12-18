@@ -49,7 +49,6 @@ variable "treat_missing_data" {
   default     = "missing"
 }
 
-
 variable "dimensions" {
   type        = map
   description = "The dimensions for this metric - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html"
