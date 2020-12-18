@@ -22,6 +22,6 @@ resource "aws_cloudwatch_metric_alarm" "this" {
 
   alarm_description = var.alarm_description != "" ? var.alarm_description : null
   alarm_actions     = var.alarm_actions != "" ? var.alarm_actions : null
-  ok_actions        = var.ok_actions != "" ? varok_actions : null
+  ok_actions        = var.ok_actions != "" ? var.ok_actions : null
 }
 
