@@ -28,7 +28,7 @@ variable "namespace" {
 variable "period" {
   type        = number
   description = "The period in seconds over which the specified statistic is applied."
-  default     = 0
+  default     = 60
 }
 
 variable "statistic" {
@@ -51,7 +51,7 @@ variable "treat_missing_data" {
 
 
 variable "dimensions" {
-  type        = list(map(string))
+  type        = any
   description = "The dimensions for this metric - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html"
 }
 
