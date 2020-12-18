@@ -5,7 +5,7 @@ module "cw_alarms" {
 
   for_each = var.alarms
 
-  source = "git::https://github.com/Cloud-42/terraform-aws-cloudwatch-metric-alarm.git?ref=0.1.0"
+  source = "git::https://github.com/Cloud-42/terraform-aws-cloudwatch-metric-alarm.git?ref=1.0"
 
   alarm_name          = each.key
   evaluation_periods  = each.value.evaluation_periods
