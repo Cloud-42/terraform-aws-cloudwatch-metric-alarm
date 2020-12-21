@@ -27,6 +27,7 @@ Creates a CloudWatch metric alarm.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| actions\_enabled | Indicates whether or not actions should be executed during any changes to the alarm's state. | `bool` | `true` | no |
 | alarm\_actions | The list of actions to execute when this alarm transitions into an ALARM state from any other state. ARN required | `string` | `""` | no |
 | alarm\_description | Alarm description | `string` | `""` | no |
 | alarm\_name | Alarm name | `string` | n/a | yes |
@@ -46,5 +47,3 @@ Creates a CloudWatch metric alarm.
 | Name | Description |
 |------|-------------|
 | alarm | CloudWatch metric alarm |
-
-

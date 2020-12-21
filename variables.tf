@@ -3,6 +3,12 @@ variable "alarm_name" {
   description = "Alarm name"
 }
 
+variable "actions_enabled" {
+  type        = bool
+  description = "Indicates whether or not actions should be executed during any changes to the alarm's state."
+  default     = true
+}
+
 variable "comparison_operator" {
   type        = string
   description = "The arithmetic operation to use when comparing the specified Statistic and Threshold. GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold."
