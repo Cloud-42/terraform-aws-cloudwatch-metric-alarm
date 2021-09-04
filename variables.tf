@@ -68,13 +68,13 @@ variable "alarm_description" {
 }
 
 variable "alarm_actions" {
-  type        = string
+  type        = list(string)
   description = "The list of actions to execute when this alarm transitions into an ALARM state from any other state. ARN required"
   default     = null
 }
 
 variable "ok_actions" {
-  type        = string
+  type        = list(string)
   description = "The list of actions to execute when this alarm transitions into an OK state from any other state. ARN required"
-  default     = ""
+  default     = null
 }
