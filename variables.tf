@@ -40,13 +40,13 @@ variable "period" {
 variable "statistic" {
   type        = string
   description = "The statistic to apply to the alarm's associated metric. SampleCount, Average, Sum, Minimum, Maximum"
-  default     = ""
+  default     = null
 }
 
 variable "threshold" {
   type        = number
   description = "The value against which the specified statistic is compared."
-  default     = 0
+  default     = null
 }
 
 variable "treat_missing_data" {
@@ -58,22 +58,23 @@ variable "treat_missing_data" {
 variable "dimensions" {
   type        = map
   description = "The dimensions for this metric - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html"
+  default     = null
 }
 
 variable "alarm_description" {
   type        = string
   description = "Alarm description"
-  default     = ""
+  default     = null
 }
 
 variable "alarm_actions" {
-  type        = string
+  type        = list(string)
   description = "The list of actions to execute when this alarm transitions into an ALARM state from any other state. ARN required"
-  default     = ""
+  default     = null
 }
 
 variable "ok_actions" {
-  type        = string
+  type        = list(string)
   description = "The list of actions to execute when this alarm transitions into an OK state from any other state. ARN required"
-  default     = ""
+  default     = null
 }

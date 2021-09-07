@@ -2,20 +2,18 @@
 # Alarms
 # --------------
 module "cw_alarms" {
-
-  for_each = var.alarms
-
-  source = "git::https://github.com/Cloud-42/terraform-aws-cloudwatch-metric-alarm.git?ref=1.0"
+  for_each = local.alarms
+  source   = "git::https://github.com/Cloud-42/terraform-aws-cloudwatch-metric-alarm.git?ref=v2.0"
 
   alarm_name          = each.key
+  metric_name         = each.value.metric_name
   evaluation_periods  = each.value.evaluation_periods
+  period              = each.value.period
   comparison_operator = each.value.comparison_operator
   statistic           = each.value.statistic
   namespace           = each.value.namespace
-  dimensions          = each.value.dimensions
+  threshold           = each.value.threshold
   alarm_description   = each.value.alarm_description
-
-  alarm_actions = each.key == "warning" ? "arn:aws:sns:eu-west-2:11234567991:notify_warning" : "arn:aws:sns:eu-west-2:160676534451:notify_critical"
-  ok_actions    = each.key == "warning" ? "arn:aws:sns:eu-west-2:11234567991:notify_warning" : "arn:aws:sns:eu-west-2:160676534451:notify_critical"
+  alarm_actions       = each.value.alarm_actions
+  ok_actions          = each.value.ok_actions
 }
-
